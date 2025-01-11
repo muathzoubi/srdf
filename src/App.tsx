@@ -482,9 +482,10 @@ return (
                       <div className="FoodSubCategoryCard_imageWrapper  ">
                         <span className="minus">
                           <img
-                            src="/.webp"
+                            src="/1.png"
                             decoding="async"
                             data-nimg="fill"
+                            
                             style={{
                               position: 'absolute',
                               inset: 0,
@@ -498,8 +499,10 @@ return (
                               minWidth: '100%',
                               maxWidth: '100%',
                               minHeight: '100%',
-                              maxHeight: '100%',
+                              maxHeight: '70px',
                               objectFit: 'cover',
+                              borderRadius:'100%',
+                              boxShadow:'0  0 1px red' 
                             }}
                           />
                         </span>
