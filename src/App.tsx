@@ -502,7 +502,6 @@ return (
                               maxHeight: '70px',
                               objectFit: 'cover',
                               borderRadius:'100%',
-                              boxShadow:'0  0 1px red' 
                             }}
                           />
                         </span>
