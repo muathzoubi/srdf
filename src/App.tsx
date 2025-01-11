@@ -430,7 +430,7 @@ return (
                             <noscript />
                           </span>
                         </span>
-                        <div className="CartButton_cartButton  " style={{background:'#025380',color:'white',padding:8,borderRadius:20}}>
+                        <div className="CartButton_cartButton  " style={{background:'#025380',color:'white',padding:'6px 4px ',borderRadius:20}}>
                          <span>{props.total +'.00'}</span> د.ك
                         </div>
                       </span>
