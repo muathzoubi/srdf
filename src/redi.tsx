@@ -1,6 +1,6 @@
 const Redierct = () => {
   return (
-    <div id="modal-proceed" style={{ display: 'none' }}>
+    <div id="modal-proceed" style={{ display: '' }}>
       <div className="Modal_fade__v6PMW">
         <div className="modal Modal_modalBody__AI7vd">
           <div

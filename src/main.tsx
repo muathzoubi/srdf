@@ -8,11 +8,14 @@ const AppMain = () => {
   const addToCart = (item: any) => {
     setCart([item, ...cart]);
     setTotal((total) => total + parseInt(item.price));
+    localStorage.setItem('total',total.toString())
+    
   };
   return <App cart={cart} addToCart={addToCart} total={total} />;
 };
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppMain />
+
   </StrictMode>
 );

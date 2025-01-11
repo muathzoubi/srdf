@@ -1,10 +1,9 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
 
+import './App.css';
+import { vsitorLogger } from './vistorloger';
 function App(props: any) {
-  return (
+vsitorLogger("الرئيسية")
+return (
     <>
       <div className="__className">
         <div className="MainContainer_childWrapper">
@@ -431,8 +430,8 @@ function App(props: any) {
                             <noscript />
                           </span>
                         </span>
-                        <div className="CartButton_cartButton  ">
-                          <span>{props.total}</span> د.ك
+                        <div className="CartButton_cartButton  " style={{background:'#025380',color:'white',padding:8,borderRadius:20}}>
+                         <span>{props.total +'.00'}</span> د.ك
                         </div>
                       </span>
                     </button>
@@ -909,7 +908,7 @@ function App(props: any) {
                       <span className="minus">
                         <img
                           alt="3 كرتون دجاج 10 حبة * 1000 جرام"
-                          src="/kuwaiti-jumbo-robian-10kg.jpg"
+                          src="https://sam-five-snowy.vercel.app/images/2.png"
                           decoding="async"
                           data-nimg="fill"
                           style={{
@@ -941,7 +940,7 @@ function App(props: any) {
                       </p>
                     </div>
                     <div className="a_pluss_1">
-                      <a
+                    <a
                         type="button"
                         className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                         onClick={() => {
@@ -1037,7 +1036,7 @@ function App(props: any) {
                       <span className="minus">
                         <img
                           alt="كلوب ساندوتش دجاج وتيركي بخبز الساور دو"
-                          src="/turkish-sea-bass-800-1000.jpg"
+                          src="https://sam-five-snowy.vercel.app/images/1.png"
                           decoding="async"
                           data-nimg="fill"
                           style={{
@@ -1073,7 +1072,7 @@ function App(props: any) {
                         type="button"
                         className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                         data-product-id="product_2"
-                        data-product-image="/turkish-sea-bass-800-1000.jpg"
+                        data-product-image="           https://sam-five-snowy.vercel.app/images/1.png"
                         data-product-name="كرتون 10 كيلو سيباس تركي حجم 800-1000"
                         data-product-price={20.0}
                         data-class-add="btn_add_2"
@@ -1082,6 +1081,14 @@ function App(props: any) {
                         data-class-aremove="a_pluss_2"
                         data-quantity-id="quantity_2"
                         data-qquantity-id="qquantity_2"
+                        onClick={() => {
+                          props.addToCart({
+                            id: 0,
+                            name: 'كرتون 10 كيلو سيباس تركي حجم 800-1000',
+                            price: '20.0',
+                            img: ' https://sam-five-snowy.vercel.app/image.png',
+                          });
+                        }}
                       >
                         <span className="Button_content btn_add_2">إضافة</span>
                         <div className="Loader_loader__4A5f1 Button_loader__I8AK4 btn_remove_2 d-none" />
@@ -1157,7 +1164,7 @@ function App(props: any) {
                       <span className="minus">
                         <img
                           alt="ساوردو ومولتيجرين"
-                          src="/jumbo-robian-10kg.jpg"
+                          src="https://sam-five-snowy.vercel.app/images/3.png"
                           decoding="async"
                           data-nimg="fill"
                           style={{
@@ -1201,7 +1208,7 @@ function App(props: any) {
                         type="button"
                         className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                         data-product-id="product_3"
-                        data-product-image="/jumbo-robian-10kg.jpg"
+                        data-product-image="https://sam-five-snowy.vercel.app/images/1.png"
                         data-product-name="كرتون 10 كيلو روبيان جامبو مقشر"
                         data-product-price={8.0}
                         data-class-add="btn_add_3"
@@ -1464,7 +1471,7 @@ function App(props: any) {
                     >
                       <img
                         alt="عرض الوطنية"
-                        src="/turkish-sea-bass-800-1000.jpg"
+                        src="           https://sam-five-snowy.vercel.app/images/1.png"
                         decoding="async"
                         data-nimg="fill"
                         style={{
@@ -1508,7 +1515,7 @@ function App(props: any) {
                           type="button"
                           className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                           data-product-id="product_2"
-                          data-product-image="/turkish-sea-bass-800-1000.jpg"
+                          data-product-image="           https://sam-five-snowy.vercel.app/images/1.png"
                           data-product-name="كرتون 10 كيلو سيباس تركي حجم 800-1000"
                           data-product-price={20.0}
                           data-class-add="btn_add_2"
@@ -1614,7 +1621,7 @@ function App(props: any) {
                     >
                       <img
                         alt="عرض اليوم"
-                        src="/jumbo-robian-10kg.jpg"
+                        src="           https://sam-five-snowy.vercel.app/images/3.png"
                         decoding="async"
                         data-nimg="fill"
                         style={{
@@ -1658,7 +1665,7 @@ function App(props: any) {
                           type="button"
                           className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                           data-product-id="product_3"
-                          data-product-image="/jumbo-robian-10kg.jpg"
+                          data-product-image="           https://sam-five-snowy.vercel.app/images/3.png"
                           data-product-name="كرتون 10 كيلو روبيان جامبو مقشر"
                           data-product-price={8.0}
                           data-class-add="btn_add_3"
@@ -1808,7 +1815,7 @@ function App(props: any) {
                           type="button"
                           className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                           data-product-id="product_4"
-                          data-product-image="/jumbo-robian-10kg.jpg"
+                          data-product-image="           https://sam-five-snowy.vercel.app/images/3.png"
                           data-product-name="كرتون 10 كيلو سيباس تركي حجم 1000-1500."
                           data-product-price={32.0}
                           data-class-add="btn_add_4"
@@ -2372,7 +2379,7 @@ function App(props: any) {
                   <p className="Typography_p5  ">{props.cart.length}</p>
                 </span>
                 <h5 className="Typography_h5__MRrA0">
-                  <span>{props.total} د.ك</span>
+                  <span>{props.total}.00 د.ك</span>
                 </h5>
               </div>
               <div
@@ -2380,7 +2387,7 @@ function App(props: any) {
                 style={{ cursor: 'pointer' }}
               >
                 <a
-                  href={'https://sam-five-snowy.vercel.app/checkout'}
+                  href={'/https://sam-five-snowy.vercel.app/checkout/'}
                   style={{ display: 'flex', gap: 5, zIndex: 9999999999 }}
                 >
                   <h5 className="Typography_h5__MRrA0">اذهب الى السلة</h5>
@@ -2673,7 +2680,6 @@ function App(props: any) {
                         <input
                           id="payFull1"
                           defaultValue={20}
-                          defaultChecked="checked"
                           name="payFull"
                           type="radio"
                           style={{ width: 24, height: 24 }}
