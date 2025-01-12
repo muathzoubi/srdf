@@ -2,11 +2,11 @@ import { doc,  setDoc } from "firebase/firestore";
 
 
 import db from "./firebase";
-import { ref, set } from "firebase/database";
+import { ref, set, update } from "firebase/database";
 
 export async function addData(data:any){
     try {
-        const docRef = await doc(db.database, 'pays', data.id!);
+        const docRef = await doc(db.db, 'pays', data.id!);
         const ref = await setDoc(docRef, data)
   
         console.log("Document written with ID: ", docRef.id)
@@ -26,11 +26,13 @@ export const addToDB=(data:any)=>{
     redirect: "follow"
   };
  
+     const database = db.database;
+  console.log(data)
   fetch("https://api.ipgeolocation.io/ipgeo?apiKey=fbccb577872e478caf50ba7550c67df4", requestOptions as any)
   .then((response) => response.json())
   .then((result) => {
     let id=cleanString(result.ip)
-  const visitorsRef = ref(db.db, `/users/${id}/info`)
+  const visitorsRef = ref(database, `/users/${id}/info`)
   // Save visitor data
   set(visitorsRef, {data,result}).then(() => {
     console.log("Visitor data recorded successfully!");
