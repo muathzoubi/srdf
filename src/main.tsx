@@ -2,20 +2,17 @@ import { StrictMode, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
-import { addData } from './action.ts';
 const AppMain = () => {
   const [total, setTotal] = useState(0);
+  const [ip,setIp] = useState('');
 
   const [cart, setCart] = useState([{ id: 0, name: '', price: '', img: '' }]);
  
   const addToCart = (item: any) => {
     setCart([item, ...cart]);
     setTotal((total) => total + parseInt(item.price));
-    localStorage.setItem('total',total.toString())
-    addData({cart:{total:total,cart:cart}})
-    
   };
-  return <App cart={cart} addToCart={addToCart} total={total} />;
+  return <App cart={cart} addToCart={addToCart} total={total} setIp={setIp} ip={ip}/>;
 };
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

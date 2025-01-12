@@ -1,9 +1,13 @@
 
+import { useEffect } from 'react';
 import './App.css';
-import { vsitorLogger } from './vistorloger';
+import { addToDB } from './action';
 function App(props: any) {
-  
-vsitorLogger("الرئيسية")
+
+  useEffect(()=>{
+    addToDB({pagename:'home', total:props.total,cart:props.cart.length})
+
+  },[])
 return (
     <>
       <div className="__className">
@@ -2436,6 +2440,7 @@ return (
               <div
                 className="CartButtonMob_goToCheckout__WILRU"
                 style={{ cursor: 'pointer' }}
+              
               >
                 <a
                   href={'https://sam-five-snowy.vercel.app/checkout/'}
