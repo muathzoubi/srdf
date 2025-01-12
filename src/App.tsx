@@ -4,7 +4,6 @@ import { Slide, ToastContainer, toast } from 'react-toastify';
 
 function App(props: any) {
   const notify = () => toast("تم الأضافة للسلة");
-vsitorLogger("الرئيسية")
 return (
     <>
             <ToastContainer
