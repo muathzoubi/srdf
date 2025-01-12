@@ -1,7 +1,6 @@
 // firebase.js
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
-import { getFirestore } from "firebase/firestore/lite";
+import {  getFirestore} from "firebase/firestore";
 
 const firebaseConfig = {
     apiKey: "AIzaSyAwFM-NiZqEAOt433nHhz8XE8cbf7PgrKg",
@@ -17,7 +16,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Get Realtime Database instance
-const database = getDatabase(app);
-const db = getFirestore(app);
+const database = getFirestore(app);
 
-export default {database,db};
+export default database;

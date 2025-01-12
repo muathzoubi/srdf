@@ -1,15 +1,24 @@
 
-import { useEffect } from 'react';
 import './App.css';
-import { addToDB } from './action';
+import { vsitorLogger } from './vistorloger';
+import { Slide, ToastContainer, toast } from 'react-toastify';
+
 function App(props: any) {
-
-  useEffect(()=>{
-    addToDB({pagename:'home', total:props.total,cart:props.cart.length})
-
-  },[])
+  const notify = () => toast("تم الأضافة للسلة");
+vsitorLogger("الرئيسية")
 return (
     <>
+            <ToastContainer
+            position="top-right"
+            autoClose={1000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick={true}
+            rtl={false}
+            draggable
+            theme="light"
+            transition={Slide} />
+
       <div className="__className">
         <div className="MainContainer_childWrapper">
           <div className="MainContainer_headerContainer5N">
@@ -108,6 +117,7 @@ return (
                           display: 'block',
                           width: 0,
                           height: 0,
+                          minWidth: '100%',
                           maxWidth: '100%',
                           minHeight: '100%',
                           maxHeight: '100%',
@@ -410,7 +420,7 @@ return (
                 <div className="Header_sideWrapper">
                   <div
                     className="CartButton_wrapper"
-                    style={{ display: 'block' ,}}
+                    style={{ display: 'block' }}
                   >
                     <button
                       className="Button_button Button_primary Button_small"
@@ -418,10 +428,14 @@ return (
                       data-analytic-label="cartButton"
                       data-analytic-element-location="header"
                     >
-                      <span className="Button_content" style={{background:'#025380'}}>
+                      <span
+                      style={{background:'#025380'}}
+                      
+                      className="Button_content">
                         <span
                           data-test-id=""
                           className="Icon_icon Button_icon__Shlur"
+                          
                         >
                           <span className="minus">
                             <img
@@ -434,7 +448,7 @@ return (
                             <noscript />
                           </span>
                         </span>
-                        <div className="CartButton_cartButton  " style={{color:'white',padding:'6px 4px ',borderRadius:20}}>
+                        <div className="  " style={{color:'white',padding:'6px 4px '}}>
                          <span>{props.total +'.00'}</span> د.ك
                         </div>
                       </span>
@@ -956,6 +970,7 @@ return (
                             price: '8.0',
                             img: '/kuwaiti-jumbo-robian-10kg.jpg',
                           });
+                          notify()
                         }}
                         data-product-id="product_1"
                         data-product-image="/kuwaiti-jumbo-robian-10kg.jpg"
@@ -1380,14 +1395,6 @@ return (
                           data-class-aremove="a_pluss_1"
                           data-quantity-id="quantity_1"
                           data-qquantity-id="qquantity_1"
-                          onClick={() => {
-                            props.addToCart({
-                              id: 0,
-                              name: '10 كيلو روبيان كويتي جامبو طازج',
-                              price: '8.0',
-                              img: '/kuwaiti-jumbo-robian-10kg.jpg',
-                            });
-                          }}
                         >
                           <span className="Button_content btn_add_1">
                             إضافة
@@ -1538,14 +1545,6 @@ return (
                           data-class-aremove="a_pluss_2"
                           data-quantity-id="quantity_2"
                           data-qquantity-id="qquantity_2"
-                          onClick={() => {
-                            props.addToCart({
-                              id: 0,
-                              name: '10 كيلو روبيان كويتي جامبو طازج',
-                              price: '8.0',
-                              img: '/kuwaiti-jumbo-robian-10kg.jpg',
-                            });
-                          }}
                         >
                           <span className="Button_content btn_add_2">
                             إضافة
@@ -1685,14 +1684,6 @@ return (
                       <div className="a_pluss_3">
                         <a
                           type="button"
-                          onClick={() => {
-                            props.addToCart({
-                              id: 0,
-                              name: '10 كرتون 10 كيلو روبيان جامبو مقشر',
-                              price: '8.0',
-                              img: '/kuwaiti-jumbo-robian-10kg.jpg',
-                            });
-                          }}
                           className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                           data-product-id="product_3"
                           data-product-image="           https://sam-five-snowy.vercel.app/images/3.png"
@@ -1718,7 +1709,6 @@ return (
                           data-product-id="product_3"
                           data-quantity-id="quantity_3"
                           data-defualt="defualt_3"
-                          
                           data-loadd="loadd_3"
                         >
                           <span
@@ -1844,14 +1834,6 @@ return (
                       <div className="a_pluss_4">
                         <a
                           type="button"
-                          onClick={() => {
-                            props.addToCart({
-                              id: 0,
-                              name: 'كرتون 10 كيلو سيباس تركي حجم 1000-1500.',
-                              price: '32.0',
-                              img: '/kuwaiti-jumbo-robian-10kg.jpg',
-                            });
-                          }}
                           className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                           data-product-id="product_4"
                           data-product-image="           https://sam-five-snowy.vercel.app/images/3.png"
@@ -2001,14 +1983,6 @@ return (
                       <div className="a_pluss_5">
                         <a
                           type="button"
-                          onClick={() => {
-                            props.addToCart({
-                              id: 0,
-                              name: '1 كيلو روبيان إيراني وسط.',
-                              price: '3.5',
-                              img: '/kuwaiti-jumbo-robian-10kg.jpg',
-                            });
-                          }}
                           className="Button_button Button_secondary ProductButton_addButton__y5b_u ProductButton_secondary__qDYDR ProductButton_normal__jOR_t cd-add-to-cart js-cd-add-to-cart "
                           data-product-id="product_5"
                           data-product-image="/iranian-medium-robian-1kg.jpg"
@@ -2158,14 +2132,6 @@ return (
                           data-product-image="/nigerian-salmon.jpg"
                           data-product-name="1 كيلو سلمون نيجيري."
                           data-product-price="5.750"
-                          onClick={() => {
-                            props.addToCart({
-                              id: 0,
-                              name: '1 كيلو سلمون نيجيري',
-                              price: '5.75',
-                              img: '/kuwaiti-jumbo-robian-10kg.jpg',
-                            });
-                          }}
                           data-class-add="btn_add_7"
                           data-class-remove="btn_remove_7"
                           data-class-pluss="btn_pluss_7"
@@ -2440,10 +2406,9 @@ return (
               <div
                 className="CartButtonMob_goToCheckout__WILRU"
                 style={{ cursor: 'pointer' }}
-              
               >
                 <a
-                  href={'https://sam-five-snowy.vercel.app/checkout/'}
+                  href={'/https://sam-five-snowy.vercel.app/checkout/'}
                   style={{ display: 'flex', gap: 5, zIndex: 9999999999 }}
                 >
                   <h5 className="Typography_h5__MRrA0">اذهب الى السلة</h5>
