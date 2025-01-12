@@ -20,6 +20,5 @@ const AppMain = () => {
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <AppMain />
-
   </StrictMode>
 );
