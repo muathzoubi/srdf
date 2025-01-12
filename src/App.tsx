@@ -1,6 +1,5 @@
 
 import './App.css';
-import { vsitorLogger } from './vistorloger';
 import { Slide, ToastContainer, toast } from 'react-toastify';
 
 function App(props: any) {
