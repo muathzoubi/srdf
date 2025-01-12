@@ -2,6 +2,7 @@
 import './App.css';
 import { vsitorLogger } from './vistorloger';
 function App(props: any) {
+  
 vsitorLogger("الرئيسية")
 return (
     <>
